@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,7 +26,7 @@
             android:id="@+id/main_fill_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_format_color_fill_white_24dp"
+            app:srcCompat="@drawable/ic_format_color_fill_white_24dp"
             android:padding="15dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -34,7 +35,7 @@
             android:id="@+id/main_color_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_palette_white_24dp"
+            app:srcCompat="@drawable/ic_palette_white_24dp"
             android:padding="15dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -43,7 +44,7 @@
             android:id="@+id/main_stroke_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_gesture_white_24dp"
+            app:srcCompat="@drawable/ic_gesture_white_24dp"
             android:padding="15dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -52,7 +53,7 @@
             android:id="@+id/main_undo_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_undo_white_24dp"
+            app:srcCompat="@drawable/ic_undo_white_24dp"
             android:padding="15dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -61,7 +62,7 @@
             android:id="@+id/main_redo_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_redo_white_24dp"
+            app:srcCompat="@drawable/ic_redo_white_24dp"
             android:padding="15dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
