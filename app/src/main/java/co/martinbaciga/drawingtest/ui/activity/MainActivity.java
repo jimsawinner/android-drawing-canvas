@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -18,9 +19,6 @@ import androidx.appcompat.app.AlertDialog;
 import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import co.martinbaciga.drawingtest.R;
 import co.martinbaciga.drawingtest.domain.manager.FileManager;
 import co.martinbaciga.drawingtest.domain.manager.PermissionManager;
@@ -29,12 +27,11 @@ import co.martinbaciga.drawingtest.ui.dialog.StrokeSelectorDialog;
 
 public class MainActivity extends AppCompatActivity
 {
-	@BindView(R.id.main_drawing_view) DrawingView mDrawingView;
-	@BindView(R.id.main_fill_iv) ImageView mFillBackgroundImageView;
-	@BindView(R.id.main_color_iv) ImageView mColorImageView;
-	@BindView(R.id.main_stroke_iv) ImageView mStrokeImageView;
-	@BindView(R.id.main_undo_iv) ImageView mUndoImageView;
-	@BindView(R.id.main_redo_iv) ImageView mRedoImageView;
+	DrawingView mDrawingView;
+	ImageView mColorImageView;
+	ImageView mStrokeImageView;
+	ImageView mUndoImageView;
+	ImageView mRedoImageView;
 
 	private int mCurrentBackgroundColor;
 	private int mCurrentColor;
@@ -47,9 +44,41 @@ public class MainActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		ButterKnife.bind(this);
+		mDrawingView = findViewById(R.id.main_drawing_view);
+		mColorImageView = findViewById(R.id.main_color_iv);
+		mStrokeImageView = findViewById(R.id.main_stroke_iv);
+		mUndoImageView = findViewById(R.id.main_undo_iv);
+		mRedoImageView = findViewById(R.id.main_redo_iv);
 
 		initDrawingView();
+
+		mStrokeImageView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startStrokeSelectorDialog();
+			}
+		});
+
+		mUndoImageView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mDrawingView.undo();
+			}
+		});
+
+		mRedoImageView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mDrawingView.redo();
+			}
+		});
+
+		mColorImageView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startColorPickerDialog();
+			}
+		});
 	}
 
 	@Override
@@ -203,35 +232,5 @@ public class MainActivity extends AppCompatActivity
 				}
 			}
 		}
-	}
-
-	@OnClick(R.id.main_fill_iv)
-	public void onBackgroundFillOptionClick()
-	{
-		startFillBackgroundDialog();
-	}
-
-	@OnClick(R.id.main_color_iv)
-	public void onColorOptionClick()
-	{
-		startColorPickerDialog();
-	}
-
-	@OnClick(R.id.main_stroke_iv)
-	public void onStrokeOptionClick()
-	{
-		startStrokeSelectorDialog();
-	}
-
-	@OnClick(R.id.main_undo_iv)
-	public void onUndoOptionClick()
-	{
-		mDrawingView.undo();
-	}
-
-	@OnClick(R.id.main_redo_iv)
-	public void onRedoOptionClick()
-	{
-		mDrawingView.redo();
 	}
 }

@@ -54,13 +54,6 @@ public class DrawingView extends View
 		mDrawPaint.setStrokeCap(Paint.Cap.ROUND);
 	}
 
-	private void drawBackground(Canvas canvas)
-	{
-		mBackgroundPaint.setColor(mBackgroundColor);
-		mBackgroundPaint.setStyle(Paint.Style.FILL);
-		canvas.drawRect(0, 0, this.getWidth(), this.getHeight(), mBackgroundPaint);
-	}
-
 	private void drawPaths(Canvas canvas)
 	{
 		int i = 0;
@@ -74,7 +67,6 @@ public class DrawingView extends View
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
-		drawBackground(canvas);
 		drawPaths(canvas);
 
 		canvas.drawPath(mDrawPath, mDrawPaint);
@@ -151,7 +143,6 @@ public class DrawingView extends View
 
 	public Bitmap getBitmap()
 	{
-		drawBackground(mDrawCanvas);
 		drawPaths(mDrawCanvas);
 		return mCanvasBitmap;
 	}

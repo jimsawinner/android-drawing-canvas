@@ -17,26 +17,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.15"
+        android:layout_weight="0.05"
         android:orientation="horizontal"
         android:gravity="center"
         android:background="@color/colorPrimary">
-
-        <ImageView
-            android:id="@+id/main_fill_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_format_color_fill_white_24dp"
-            android:padding="15dp"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
 
         <ImageView
             android:id="@+id/main_color_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_palette_white_24dp"
-            android:padding="15dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
@@ -45,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_gesture_white_24dp"
-            android:padding="15dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
@@ -54,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_undo_white_24dp"
-            android:padding="15dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
@@ -63,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_redo_white_24dp"
-            android:padding="15dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
